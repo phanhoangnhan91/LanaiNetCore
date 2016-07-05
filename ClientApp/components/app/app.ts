@@ -3,7 +3,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 import { Shared } from '../shared/shared'
 import {POIService} from '../shared/poi.service'
 import { NavMenu } from '../nav-menu/nav-menu';
-declare var $: any;
+var $ = require('jquery');
 
 @ng.Component({
     selector: 'app',
@@ -23,9 +23,9 @@ export class App {
             this.pOIService.getPOIsData();
         }
         //// scroll to view 
-        //$('html, body').animate({
-        //    scrollTop: $("#viewButton").offset().top
-        //}, 1000);
+        $('html, body').animate({
+            scrollTop: $("#viewButton").offset().top
+        }, 1000);
     }
     filters = [
         { Name: 'Explorer', ModelType: '', Class: 'lanai-compass' },
