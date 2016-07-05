@@ -22,10 +22,10 @@ export class App {
             this.shared.activeModelType = modelType;
             this.pOIService.getPOIsData();
         }
-        // scroll to view 
-        $('html, body').animate({
-            scrollTop: $("#viewButton").offset().top
-        }, 1000);
+        //// scroll to view 
+        //$('html, body').animate({
+        //    scrollTop: $("#viewButton").offset().top
+        //}, 1000);
     }
     filters = [
         { Name: 'Explorer', ModelType: '', Class: 'lanai-compass' },
