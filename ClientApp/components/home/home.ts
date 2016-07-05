@@ -9,13 +9,13 @@ import {Loading} from "../shared/loading.component"
   providers: [POIService],
   directives: [Loading]
 })
-export class Home implements ng.OnInit {
+export class Home implements ng.AfterViewInit {
     constructor(private pOIService: POIService, private shared: Shared) {
        
     }
 
-    ngOnInit() {
-       // this.pOIService.getPOIsData();
+    ngAfterViewInit() {       
+      // this.pOIService.getPOIsData();
     } 
    
     loadMore() {
