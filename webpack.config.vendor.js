@@ -10,7 +10,23 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
+            { test: /\.(png)$/, loader: 'url-loader?limit=100000' },
+            {
+                test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "url?limit=10000&mimetype=application/font-woff&name=./webpack-assets/[name]/[hash].[ext]"
+            }, {
+                test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "url?limit=10000&mimetype=application/font-woff&name=./webpack-assets/[name]/[hash].[ext]"
+            }, {
+                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "url?limit=10000&mimetype=application/octet-stream&name=./webpack-assets/[name]/[hash].[ext]"
+            }, {
+                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "file?&name=./webpack-assets/[name]/[hash].[ext]"
+            }, {
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "url?limit=10000&mimetype=image/svg+xml&name=./webpack-assets/[name]/[hash].[ext]"
+            }   ,
             { test: /\.css/, loader: extractCSS.extract(['css']) }
         ]
     },
@@ -18,6 +34,7 @@ module.exports = {
         vendor: [
             'bootstrap',
             'bootstrap/dist/css/bootstrap.css',
+            'font-awesome/css/font-awesome.css',
             'style-loader',
             'jquery',
             '@angular/common',

@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "devDependencies": {
     "bootstrap": "^3.3.6",
+    "font-awesome": "4.6.3",
     "css-loader": "^0.23.1",
     "expose-loader": "^0.7.1",
     "extendify": "^1.0.0",
