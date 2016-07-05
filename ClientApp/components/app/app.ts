@@ -1,10 +1,9 @@
-/// <reference path="../../../typings/jquery/jquery.d.ts" />
 import * as ng from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { Shared } from '../shared/shared'
 import {POIService} from '../shared/poi.service'
 import { NavMenu } from '../nav-menu/nav-menu';
-var $ = require('jquery');
+declare var $: any;
 
 @ng.Component({
     selector: 'app',
@@ -24,9 +23,9 @@ export class App {
             this.pOIService.getPOIsData();
         }
         //// scroll to view 
-        $('html, body').animate({
-            scrollTop: $("#viewButton").offset().top
-        }, 1000);
+        //$('html, body').animate({
+        //    scrollTop: $("#viewButton").offset().top
+        //}, 1000);
     }
     filters = [
         { Name: 'Explorer', ModelType: '', Class: 'lanai-compass' },
