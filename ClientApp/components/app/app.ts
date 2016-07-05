@@ -13,7 +13,7 @@ declare var $: any;
 })
 export class App {
     constructor(private shared: Shared, private pOIService: POIService) {
-      //  this.pOIService.getPOIsData()
+        //this.pOIService.getPOIsData()
     }
    
     

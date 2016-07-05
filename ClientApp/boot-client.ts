@@ -11,7 +11,7 @@ import { HTTP_PROVIDERS } from '@angular/http';
 import { App } from './components/app/app';
 import {Shared} from './components/shared/shared'
 import { routes } from './routes';
-//enableProdMode();
+enableProdMode();
 bootstrap(App, [
     ...HTTP_PROVIDERS,
     FormBuilder,

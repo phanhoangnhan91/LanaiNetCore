@@ -47,6 +47,7 @@ body, html {
     position: absolute;
     bottom: 340px;
     text-align: center;
+    width:100%;
 }
 .intro-text h1{
     font-family: Montserrat-Black;
