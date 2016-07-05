@@ -30,7 +30,9 @@ module.exports = merge({
         extractCSS,
         new webpack.DllReferencePlugin({
             context: __dirname,
-            manifest: require('./wwwroot/dist/vendor-manifest.json')
-        })
+            manifest: require('./wwwroot/dist/vendor-manifest.json'),
+           
+        }),
+         new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery' }),
     ]
 }, isDevelopment ? devConfig : prodConfig);
