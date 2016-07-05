@@ -79,8 +79,6 @@ body, html {
 	-moz-box-shadow: 0 0 20px rgba(52,75,123,.15);
 	box-shadow: 0 0 20px rgba(52,75,123,.15);
 }
-.tab-menu .tab-holder-middle{
-}
 .tab-menu .tab-title{
 	font-weight: bold;
 	text-transform: uppercase;
@@ -461,6 +459,10 @@ section.top-menu{
     height:800px;
     background-color:#fff;
     border-radius: 10px 0px 0px 10px;
+}
+a:hover {
+    color: #23527c;
+    text-decoration: initial;
 }
 
 

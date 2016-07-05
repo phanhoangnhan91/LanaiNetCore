@@ -2,6 +2,7 @@ require('zone.js');
 import 'bootstrap';
 import 'reflect-metadata';
 import './styles/site.css';
+import './styles/lanai-icon.css';
 import {enableProdMode} from '@angular/core';
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { FormBuilder } from '@angular/common';
