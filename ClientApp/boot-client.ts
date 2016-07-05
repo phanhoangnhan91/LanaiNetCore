@@ -8,12 +8,14 @@ import { FormBuilder } from '@angular/common';
 import { provideRouter } from '@angular/router';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { App } from './components/app/app';
+import {Shared} from './components/shared/shared'
 import { routes } from './routes';
 //enableProdMode();
 bootstrap(App, [
     ...HTTP_PROVIDERS,
     FormBuilder,
-    provideRouter(routes)
+    provideRouter(routes),
+    Shared
 ]);
 
 // Basic hot reloading support. Automatically reloads and restarts the Angular 2 app each time

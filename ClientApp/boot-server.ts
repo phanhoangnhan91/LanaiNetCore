@@ -6,6 +6,7 @@ import * as ngUniversal from 'angular2-universal';
 import { BASE_URL, ORIGIN_URL, REQUEST_URL } from 'angular2-universal/common';
 import { App } from './components/app/app';
 import { routes } from './routes';
+import {Shared} from './components/shared/shared'
 
 const bootloader = ngUniversal.bootloader({
     async: true,
@@ -24,6 +25,8 @@ export default function (params: any): Promise<{ html: string, globals?: any }> 
             ...ngUniversal.NODE_HTTP_PROVIDERS,
             provideRouter(routes),
             ...ngUniversal.NODE_LOCATION_PROVIDERS,
+            Shared,
+
         ],
         // TODO: Render just the <app> component instead of wrapping it inside an extra HTML document
         // Waiting on https://github.com/angular/universal/issues/347

@@ -1,10 +1,89 @@
-<div class='container-fluid'>
-    <div class='row'>
-        <div class='col-sm-3'>
-            <nav-menu></nav-menu>
-        </div>
-        <div class='col-sm-9 body-content'>
-            <router-outlet></router-outlet>
+﻿<!-- This is layout page -->
+<div class="intro-photo">
+</div>
+<div class="overlay-photo">
+    <div class="container">
+        <section class="top-menu row">
+
+            <div class="logo col-md-3 col-sm-2">Lānaʻi Guide</div>
+            <div class="col-md-6 col-sm-8">
+                <ul class="menu opacity-8">
+                    <li *ngFor="let f of filters; let i = index" (click)="changeActive(f.ModelType)" class="col-sm-2" [ngClass]="{'col-lg-offset-1 col-sm-offset-0':i==0, 'active':f.ModelType==shared.activeModelType}">{{f.Name}}</li>
+                    <li class="col-md-2 more">
+                        <div class="dropdown">
+                            <button class="dropdown-toggle more-button" type="button" data-toggle="dropdown">
+                                More
+                                <i class="fa fa-chevron-down"></i>
+                                <i style="display:none" class="fa fa-chevron-up"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Downloads</a></li>
+                                <li><a href="#">About</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-2 text-right opacity-6" id="search">
+                <input type="text" placeholder="I’m looking for ..." />
+                <i class="fa fa-search"></i>
+                <!--<i class="fa fa-search"></i>-->
+
+            </div>
+
+        </section>
+    </div>
+    <section class="intro-text">
+        <h1>Explore the rich natural and cultural history of Lānaʻi.</h1>
+        <br />
+        <span class="opacity-6">Please select an option</span>
+    </section>
+    <section class="tab-menu">
+        <ul>
+            <li *ngFor="let f of filters; let i = index" (click)="changeActive(f.ModelType)" [ngClass]="{'tab-holder-middle':(i==1||i==2),'active':f.ModelType==shared.activeModelType}">
+                <i class="fa {{f.Class}}"></i>
+                <span class="tab-title">{{f.Name}}</span>
+            </li>
+
+        </ul>
+    </section>
+</div>
+<div id="container">
+    <div id="viewButton">
+
+        <nav-menu></nav-menu>
+    </div>
+    <div class="container" id="pageContent">
+        <router-outlet></router-outlet>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <section class="top-menu row">
+                <div class="logo col-md-3 col-sm-2">Lānaʻi Guide</div>
+                <div class="col-md-6 col-sm-8">
+                    <ul class="menu opacity-8">
+                        <li *ngFor="let f of filters; let i = index" (click)="changeActive(f.ModelType)" class="col-sm-2" [ngClass]="{'active':f.ModelType==shared.activeModelType}">{{f.Name}}</li>
+                        <li class="col-md-2">About</li>
+                        <li class="col-md-2">Downloads</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-2 content-right social-icon"> <i class="fa fa-twitter"></i> <i class="fa fa-facebook"></i> <i class="fa fa-google-plus"></i></div>
+            </section>
+            <div class="row">
+                <div class="line col-lg-10 col-lg-offset-1"></div>
+            </div>
+            <section class="footer-content row">
+                <div class="col-md-3 text-center col-sm-2 uppercase-text opacity-3">© Lānaʻi Guide, 2016. All Rights Reserved.</div>
+                <div class="col-md-6 col-sm-8 opacity-3">
+                    <ul class="menu privacy">
+                        <li class="col-sm-6 text-right">Privacy Policy</li>
+                        <li class="col-sm-6">Terms and Conditions</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-2 content-right">
+                    <div id="download-icon"></div>
+                </div>
+            </section>
         </div>
     </div>
-</div>
+</div> 

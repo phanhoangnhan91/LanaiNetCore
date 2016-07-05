@@ -7,4 +7,5 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
   directives: [...ROUTER_DIRECTIVES]
 })
 export class NavMenu {
+    viewButtons = [{ Name: 'List', Route: '/home' }, { Name: 'Map', Route: '/counter' }];
 }
